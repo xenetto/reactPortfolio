@@ -1,46 +1,11 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import axios from "axios";
 import { Element } from "react-scroll";
 import "./Contact.css";
+import data from '../../utils/mydata';
+import Fade from 'react-reveal/Fade';
 
 export default function ContactForm() {
-  const handleSubmit = e => {
-    e.preventDefault();
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
-    const resetForm = () => {
-      document.getElementById("contact-form").reset();
-    };
-    /*  let headers = new Headers();
-    headers.append(
-      "Access-Control-Allow-Origin",
-      "http://localhost:3002/email"
-    );
-    headers.append("Access-Control-Allow-Credentials", "true"); */
-
-    axios({
-      method: "POST",
-      url: "URLOFBACKEND/email",
-      data: {
-        name: name,
-        email: email,
-        message: message
-      } /* ,
-      headers: headers */
-    }).then(response => {
-      console.log("response:", response);
-      if (response.data.message === "success") {
-        alert("Message Sent.");
-        resetForm();
-      } else if (response.data.msg === "fail") {
-        alert("Message failed to send.");
-      }
-    });
-  };
   return (
     <React.Fragment>
       <Typography
@@ -52,73 +17,101 @@ export default function ContactForm() {
           margin: "1rem",
           fontSize: "1.6rem",
           textTransform: "uppercase",
-          fontFamily: '"Bungee", cursive'
-        }}
-      >
-        <Element name="contact-me">Contact Me</Element>
+          fontFamily: '"Bungee", cursive',
+        }}>
+      <Element name="contact-me">Contact Me</Element>
       </Typography>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginBottom: "20px"
-        }}
-      >
-        <form
-          onSubmit={e => handleSubmit(e)}
-          className="contact-form"
-          id="contact-form"
-          style={{
-            backgroundColor: "#fff",
-            display: "flex",
-            flexDirection: "column",
-            padding: "25px",
-            borderRadius: "10px"
-          }}
-        >
-          <TextField
-            label="Name"
-            type="text"
-            margin="normal"
-            variant="outlined"
-            id="name"
-            placeholder="Enter your name"
-          />
-          <TextField
-            label="Email"
-            type="email"
-            id="email"
-            margin="normal"
-            variant="outlined"
-            placeholder="Enter your email"
-          />
-          <TextField
-            label="Message"
-            id="message"
-            multiline
-            margin="normal"
-            variant="outlined"
-            placeholder="Enter your message"
-          />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-          >
-            <Button
-              variant="outlined"
-              color="primary"
-              size="large"
-              type="submit"
-              style={{ width: "50%", marginTop: "15px" }}
-            >
-              Send
-            </Button>
-          </div>
-        </form>
-      </div>
+      
+      <div>
+        <Fade bottom>
+        <div className='contact-content'>
+                <h1>
+                Let’s create your next experience together :
+                </h1>
+                <a href={`mailto:${data.contactEmail}`} className='email'>{data.contactEmail}</a>
+                <ul>
+                    {data.social.map((link,index)=>(
+                        <li key={index}><a target='_blank' rel="noopener noreferrer" href={link.url}>{link.name}</a></li>
+                    ))}   
+                </ul>
+            </div>
+          </Fade>
+        </div>
+
+      
+            <ul className="info">
+              <li><span class="first-block">Full Name:</span><span class="second-block">Louie Jie Mahusay</span></li>
+              <li><span class="first-block">Phone:</span><span class="second-block">+ 1235 2355 98</span></li>
+              <li><span class="first-block">Email:</span><span class="second-block">info@yoursite.com</span></li>
+              <li><span class="first-block">Website:</span><span class="second-block">www.yoursite.com</span></li>
+              <li><span class="first-block">Address:</span><span class="second-block">198 West 21th Street, Suite 721 New York NY 10016</span></li>
+            </ul>
+
+            <p>
+              <ul class="fh5co-social-icons">
+                <li><a href="#"><i class="icon-twitter2"></i></a></li>
+                <li><a href="#"><i class="icon-facebook3"></i></a></li>
+                <li><a href="#"><i class="icon-linkedin2"></i></a></li>
+                <li><a href="#"><i class="icon-dribbble2"></i></a></li>
+              </ul>
+            </p>
+ 
+
+              <li class="timeline-heading text-center animate-box">
+                <div><h3>Education</h3></div>
+              </li>
+              <li class="timeline-inverted animate-box">
+                <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3 class="timeline-title">Masters Degree</h3>
+                    <span class="company">University Name - 2007 - 2009</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>Far far away, behind the word mountains, they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="animate-box timeline-unverted">
+                <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3 class="timeline-title">Bachelors Degree</h3>
+                    <span class="company">University Name - 2002 - 2006</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted animate-box">
+                <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3 class="timeline-title">Diploma Course</h3>
+                    <span class="company">College Name - 1999 - 2001</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>Far far away, behind the word mountains, they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="animate-box timeline-unverted">
+                <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3 class="timeline-title">Graduation</h3>
+                    <span class="company">College Name - 1994 - 1998</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                  </div>
+                </div>
+              </li>
+              
+    
+
+
     </React.Fragment>
   );
 }
