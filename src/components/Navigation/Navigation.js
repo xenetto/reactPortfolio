@@ -5,6 +5,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
+import ImportantDevices from '@material-ui/icons/ImportantDevices'
 import PersonPinIcon from '@material-ui/icons/PersonPin';
 import WorkRoundedIcon from '@material-ui/icons/WorkRounded';
 import QuestionAnswerRoundedIcon from '@material-ui/icons/QuestionAnswerRounded';
@@ -105,10 +107,11 @@ var scroller = Scroll.scroller;
 					centered={tabTypes[1]}
 				>
 					<Tab onClick={()=>scrollFunc("about-me")} label='About Me' icon={<PersonPinIcon />} {...a11yProps(0)} />
-					<Tab  onClick={()=>scrollFunc("projects")} label='Projects' icon={<FavoriteIcon />} {...a11yProps(1)} />
-					<Tab  onClick={()=>scrollFunc("experience")} label='Experience' icon={<WorkRoundedIcon />} {...a11yProps(2)} />
-					<Tab  onClick={()=>scrollFunc("skill")} label='Skill' icon={<FavoriteIcon />} {...a11yProps(3)} />
-					<Tab  onClick={()=>scrollFunc("contact-me")} label='Contact Me' icon={<QuestionAnswerRoundedIcon />} {...a11yProps(4)} />
+					<Tab  onClick={()=>scrollFunc("projects")} label='Projects' icon={<ImportantDevices />} {...a11yProps(1)} />
+					<Tab  onClick={()=>scrollFunc("education")} label='Education' icon={<AccountBalanceIcon />} {...a11yProps(2)} />
+					<Tab  onClick={()=>scrollFunc("experience")} label='Experience' icon={<WorkRoundedIcon />} {...a11yProps(3)} />
+					<Tab  onClick={()=>scrollFunc("skill")} label='Skill' icon={<FavoriteIcon />} {...a11yProps(4)} />
+					<Tab  onClick={()=>scrollFunc("contact-me")} label='Contact Me' icon={<QuestionAnswerRoundedIcon />} {...a11yProps(5)} />
 				</Tabs>
 			</AppBar>
 			<TabPanel value={value} index={0}>
@@ -118,12 +121,15 @@ var scroller = Scroll.scroller;
 				Project
 			</TabPanel>
 			<TabPanel value={value} index={2}>
-				Experience
+				Education
 			</TabPanel>
 			<TabPanel value={value} index={3}>
-				Skill
+				Experience
 			</TabPanel>
 			<TabPanel value={value} index={4}>
+				Skill
+			</TabPanel>
+			<TabPanel value={value} index={5}>
 				Contact
 			</TabPanel>
 		</div>

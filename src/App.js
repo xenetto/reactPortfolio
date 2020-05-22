@@ -7,6 +7,7 @@ import Skill from "./components/Skill/Skill";
 import ContactForm from "./components/Contact/Contact";
 import "./App.css";
 import Section from "./components/Section/Section.component";
+import Education from "./components/Education/Education";
 
 class App extends Component {
   render() {
@@ -20,12 +21,15 @@ class App extends Component {
           <ProjectCardList />
         </Section>
         <Section>
-          <Experience />
+          <Education />
         </Section>
         <Section bg>
-          <Skill />
+          <Experience />
         </Section>
         <Section>
+          <Skill />
+        </Section>
+        <Section bg>
           <ContactForm />
         </Section>
       </React.Fragment>

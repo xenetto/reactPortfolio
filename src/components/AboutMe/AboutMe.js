@@ -11,7 +11,7 @@ const AboutMe = () => {
         display="block"
         align="center"
         style={{
-          margin: "1rem",
+          margin: "-200px",
           fontSize: "1.6rem",
           textTransform: "uppercase"
         }}
@@ -24,12 +24,16 @@ const AboutMe = () => {
         <img src={portfolio} alt="profile_photo" className="img" />
         <h1>Sahar Sagharichi</h1>
         <div className="subtitle">
-          <h3>I am a Full stack web developer. I give life to designs!</h3>
+          <br></br>
+          <h3>I give life to designs!</h3>
+          <br></br>
           <p>
-          Motivated Full Stack web developer adept at building responsive web applications from front to back-end with the MERN stack (MongoDB, Express.js, React.js, Node.js). Passionate about learning new technologies, bringing ideas to life, and working with dedicated teams to build efficient and robust applications suited to the user’s needs. Holds a Master’s Degree in IT Engineering(E-Commerce).
-          </p>
-          <div class="download_cv">
-                            <a class="boxed-btn3" href="#">Download CV</a>
+          Full Stack Developer graduated from UofT, adept at building responsive web applications from front to back-end with the MERN stack (MongoDB, Express, React, Node.js). </p>
+          <p>Passionate about learning new technologies, bringing ideas to life, and working with dedicated teams to build efficient and robust applications suited to the user’s needs.</p> 
+          <p>Known among staff for strong wit and attention to detail no matter the complexity of the project.</p>
+          
+          <div class="download_resume">
+                            <a class="boxed-btn3" href="#">Download Resume</a>
                         </div>
         </div>
       </div>
